@@ -38,6 +38,7 @@ int main()
     cout <<"The lowest value in Row 2 is: " << getLowestInRow(testArray) <<"."<<endl;
     cout <<"The highest value in Row 2 is: " << getHighestInRow(testArray) <<"."<<endl;
 }
+
 /*FUNCTION TO GET TOTAL OF ALL THE ELEMENTS"*/
 int getTotal(int testArray[ROWS][COLS])
 {for (int row = 0; row < ROWS; row++)
