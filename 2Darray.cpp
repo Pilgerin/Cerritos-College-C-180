@@ -26,7 +26,7 @@ int main()
         }
         cout << endl;
       };
-    cout <<"Sum of all the elements of the array is " << getTotal(testArray) <<"."<<endl;
+    cout <<"Sum of all the elements of the array is:  " << getTotal(testArray) <<"."<<endl;
 }
 /*FUNCTION TO GET TOTAL OF ALL THE ELEMENTS"*/
 getTotal(int testArray[ROWS][COLS])
