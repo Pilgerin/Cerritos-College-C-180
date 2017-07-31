@@ -5,11 +5,12 @@
 using namespace std;
 const int ROWS=4;
 const int COLS=5;
-int total; 
-double average;
+int total;
 int getTotal (int[ROWS][COLS]);
 int getRowTotal (int[ROWS][COLS], int);
 int getColumnTotal (int[ROWS][COLS], int);
+int getLowestInRow(int[ROWS][COLS]);  
+int getHighestInRow(int[ROWS][COLS]); 
 float getAverage(int[ROWS][COLS]);
 
 /*Main function*/
@@ -34,6 +35,8 @@ int main()
     cout <<"Average of all the elements of the array is: " << getAverage(testArray) <<"."<<endl;
     cout <<"Sum of all the elements of the Row 0 is: " << getRowTotal(testArray, 0) <<"."<<endl;
     cout <<"Sum of all the elements of the Column 2 is: " << getColumnTotal(testArray, 0) <<"."<<endl;
+    cout <<"The lowest value in Row 2 is: " << getLowestInRow(testArray) <<"."<<endl;
+    cout <<"The highest value in Row 2 is: " << getHighestInRow(testArray) <<"."<<endl;
 }
 /*FUNCTION TO GET TOTAL OF ALL THE ELEMENTS"*/
 int getTotal(int testArray[ROWS][COLS])
@@ -47,7 +50,8 @@ int getTotal(int testArray[ROWS][COLS])
 
 /*FUNCTION TO GET AVERAGE OF ALL ROWS*/
 float getAverage(int testArray[ROWS][COLS])
-{ total = 0;
+{ double average;
+total = 0;
 total=getTotal(testArray);
 average = total/(float(ROWS*COLS));
 return average;
@@ -75,4 +79,34 @@ int getRowTotal(int testArray[ROWS][COLS], int col)
        total += testArray[0][col];
         }
         return total;
+        }
+
+/*FUNCTION TO GET LOWEST VALUE OF ROW 2*/
+
+int getLowestInRow(int testArray[ROWS][COLS])   
+    { 
+    int lowest = testArray[2][0];
+    cout << lowest <<endl;
+     for (int i = 0; i < COLS; i++)
+        {if (testArray[2][i] < lowest)
+           {
+           lowest = testArray[2][i];
+           }
+        }
+        return lowest;
+        }
+
+/*FUNCTION TO GET HIGHEST VALUE OF ROW 2*/
+
+int getHighestInRow(int testArray[ROWS][COLS])   
+    { 
+    int highest = testArray[2][0];
+    cout << highest <<endl;
+     for (int i = 0; i < COLS; i++)
+        {if (testArray[2][i] > highest)
+           {
+           highest = testArray[2][i];
+           }
+        }
+        return highest;
         }
