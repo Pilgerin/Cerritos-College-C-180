@@ -41,6 +41,7 @@ int main()
     cout <<"Sum of all the elements of the Column 2 is: " << getColumnTotal(testArray, 0) <<"."<<endl;
     cout <<"The lowest value in Row 2 is: " << getLowestInRow(testArray) <<"."<<endl;
     cout <<"The highest value in Row 2 is: " << getHighestInRow(testArray) <<"."<<endl;
+return 0;
 }
 
 /*FUNCTION TO GET TOTAL OF ALL THE ELEMENTS"*/
