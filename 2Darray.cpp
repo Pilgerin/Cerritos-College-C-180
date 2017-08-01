@@ -87,8 +87,7 @@ int getRowTotal(int testArray[ROWS][COLS], int col)
 int getLowestInRow(int testArray[ROWS][COLS])   
     { 
     int lowest = testArray[2][0];
-    cout << lowest <<endl;
-     for (int i = 0; i < COLS; i++)
+         for (int i = 0; i < COLS; i++)
         {if (testArray[2][i] < lowest)
            {
            lowest = testArray[2][i];
@@ -102,8 +101,7 @@ int getLowestInRow(int testArray[ROWS][COLS])
 int getHighestInRow(int testArray[ROWS][COLS])   
     { 
     int highest = testArray[2][0];
-    cout << highest <<endl;
-     for (int i = 0; i < COLS; i++)
+         for (int i = 0; i < COLS; i++)
         {if (testArray[2][i] > highest)
            {
            highest = testArray[2][i];
