@@ -9,8 +9,8 @@ int total;
 int getTotal (int[ROWS][COLS]);
 int getRowTotal (int[ROWS][COLS], int);
 int getColumnTotal (int[ROWS][COLS], int);
-int getLowestInRow(int[ROWS][COLS]);  
-int getHighestInRow(int[ROWS][COLS]); 
+int getLowestInRow(int[ROWS][COLS], int);  
+int getHighestInRow(int[ROWS][COLS], int); 
 float getAverage(int[ROWS][COLS]);
 
 /*Main function*/
@@ -21,13 +21,13 @@ int main()
                { 11, 12, 13, 14, 15 },
                { 16, 17, 18, 19, 20 }};
     
-     cout << setw(20)<< "Table content:  "<<endl;
+     cout << setw(20)<< fixed << setprecision (1) << "Table content:  "<<endl;
 
     for (int i = 0; i < ROWS; ++i)
     {
         for (int j = 0; j < COLS; ++j)
         {
-         cout <<setw(4)<< testArray[i][j] << ' ';
+         cout <<setw(5)<< testArray[i][j] << ' ';
         }
         cout << endl;
       };
@@ -35,8 +35,8 @@ int main()
     cout <<"Average of all the elements of the array is: " << getAverage(testArray) <<"."<<endl;
     cout <<"Sum of all the elements of the Row 0 is: " << getRowTotal(testArray, 0) <<"."<<endl;
     cout <<"Sum of all the elements of the Column 2 is: " << getColumnTotal(testArray, 0) <<"."<<endl;
-    cout <<"The lowest value in Row 2 is: " << getLowestInRow(testArray) <<"."<<endl;
-    cout <<"The highest value in Row 2 is: " << getHighestInRow(testArray) <<"."<<endl;
+    cout <<"The lowest value in Row 2 is: " << getLowestInRow(testArray, 0) <<"."<<endl;
+    cout <<"The highest value in Row 2 is: " << getHighestInRow(testArray, 0) <<"."<<endl;
 }
 
 /*FUNCTION TO GET TOTAL OF ALL THE ELEMENTS"*/
@@ -84,9 +84,9 @@ int getRowTotal(int testArray[ROWS][COLS], int col)
 
 /*FUNCTION TO GET LOWEST VALUE OF ROW 2*/
 
-int getLowestInRow(int testArray[ROWS][COLS])   
+int getLowestInRow(int testArray[ROWS][COLS], int i)   
     { 
-    int lowest = testArray[2][0];
+    int lowest = testArray[2][i];
          for (int i = 0; i < COLS; i++)
         {if (testArray[2][i] < lowest)
            {
@@ -98,9 +98,9 @@ int getLowestInRow(int testArray[ROWS][COLS])
 
 /*FUNCTION TO GET HIGHEST VALUE OF ROW 2*/
 
-int getHighestInRow(int testArray[ROWS][COLS])   
+int getHighestInRow(int testArray[ROWS][COLS],int i)   
     { 
-    int highest = testArray[2][0];
+    int highest = testArray[2][i];
          for (int i = 0; i < COLS; i++)
         {if (testArray[2][i] > highest)
            {
